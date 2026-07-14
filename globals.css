@@ -1,0 +1,230 @@
+/* Updated: 2025-10-31T22:03:08.030Z */
+/* Updated: 2025-10-31T22:02:37.178Z */
+/* Updated: 2025-10-30T19:56:14.053Z */
+/* Updated: 2025-10-30T18:30:50.587Z */
+/* Updated: 2025-10-29T13:00:32.846Z */
+/* Updated: 2025-10-29T12:32:03.047Z */
+/* Updated: 2025-10-29T11:56:00.244Z */
+/* Updated: 2025-10-24T21:16:50.285Z */
+/* Updated: 2025-10-22T13:00:07.009Z */
+/* Updated: 2025-10-22T12:23:35.523Z */
+/* Updated: 2025-10-22T12:15:01.293Z */
+/* Updated: 2025-10-22T12:14:33.399Z */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #0f172a; /* Text Primary */
+
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #0a0a0a;
+
+  --color-primary: #0f172a; /* Accent/Primary */
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f5f5f5;
+  --color-secondary-foreground: #171717;
+
+  --color-muted: #f1f5f9; /* Muted Section BG */
+  --color-muted-foreground: #64748b; /* Text Muted */
+
+  --color-accent: #f1f5f9; /* Accent Hover */
+  --color-accent-foreground: #0f172a;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #e2e8f0; /* Border */
+  --color-input: #e5e5e5;
+  --color-ring: #0f172a; /* Focus Ring base */
+
+  --color-chart-1: #e67e22;
+  --color-chart-2: #2d8659;
+  --color-chart-3: #1e3a5f;
+  --color-chart-4: #f1c40f;
+  --color-chart-5: #e74c3c;
+
+  --color-hero-background-start: #3c4c5c;
+  --color-hero-background-mid: #475569;
+  --color-hero-background-end: #3c4c5c;
+  --color-hero-text: #ffffff;
+  --color-hero-subtitle: #cbd5e1;
+  --color-hero-secondary-button-bg: rgba(255, 255, 255, 0.1);
+  --color-hero-secondary-button-hover: rgba(255, 255, 255, 0.2);
+  --color-hero-secondary-button-border: rgba(255, 255, 255, 0.3);
+
+  --color-button-primary-hover: rgba(15, 23, 42, 0.9);
+  --color-focus-ring-opacity: rgba(15, 23, 42, 0.5);
+
+  --font-sans: "Inter", sans-serif;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to currentColor in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border);
+  }
+}
+
+@layer base {
+  :root {
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+    --card: var(--color-card);
+    --card-foreground: var(--color-card-foreground);
+    --popover: var(--color-popover);
+    --popover-foreground: var(--color-popover-foreground);
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-primary-foreground);
+    --secondary: var(--color-secondary);
+    --secondary-foreground: var(--color-secondary-foreground);
+    --muted: var(--color-muted);
+    --muted-foreground: var(--color-muted-foreground);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-accent-foreground);
+    --destructive: var(--color-destructive);
+    --destructive-foreground: var(--color-destructive-foreground);
+    --border: var(--color-border);
+    --input: var(--color-input);
+    --ring: var(--color-ring);
+    --chart-1: var(--color-chart-1);
+    --chart-2: var(--color-chart-2);
+    --chart-3: var(--color-chart-3);
+    --chart-4: var(--color-chart-4);
+    --chart-5: var(--color-chart-5);
+    --radius: 0.75rem; /* Cards: 12px */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    @apply bg-background text-foreground;
+  }
+
+  h1 {
+    font-size: 3.75rem; /* 60px */
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 4.5rem; /* 72px */
+    }
+  }
+
+  h2 {
+    font-size: 2.25rem; /* 36px */
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  p {
+    line-height: 1.6; /* Body */
+  }
+
+  .text-body-large {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75;
+  }
+
+  .text-body-small {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.5;
+  }
+
+  .text-stat-display {
+    font-size: 1.875rem; /* 30px */
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .text-stat-label {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.4;
+  }
+
+  .text-button-large {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .text-button {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .text-nav-link {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .text-logo {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
