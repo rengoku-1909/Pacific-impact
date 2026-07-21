@@ -1,0 +1,9 @@
+{
+  "projectId": "fa45385a-d1ad-42f1-8ba5-ea5edd8e0eb7",
+  "createdAt": 1769385819737,
+  "version": "1.0",
+  "startupCommands": [
+    "npm install --legacy-peer-deps; npx kill-port 3000 2>/dev/null; npm run dev"
+  ],
+  "templateId": "nextjs"
+}
