@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "installCommand": "cd orchids-ww2-pacific-impacts-main && npm install",
+  "buildCommand": "cd orchids-ww2-pacific-impacts-main && npm run build",
+  "outputDirectory": "orchids-ww2-pacific-impacts-main/.next"
+}
